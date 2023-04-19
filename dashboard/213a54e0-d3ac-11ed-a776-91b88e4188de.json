@@ -1,0 +1,425 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "assignedCustomers" : null,
+    "configuration" : {
+      "description" : "",
+      "widgets" : {
+        "0f450b26-156e-4e0b-1364-629fa1e4d312" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "a5997412-c2b3-f456-5a78-d808f3b5343f",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "pump1.alarm",
+                "type" : "timeseries",
+                "label" : "pump1.alarm",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.3591764872674157
+              }, {
+                "name" : "pump1.status",
+                "type" : "timeseries",
+                "label" : "pump1.status",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.8817564263535786
+              }, {
+                "name" : "pump2.alarm",
+                "type" : "timeseries",
+                "label" : "pump2.alarm",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.6367192386103586
+              }, {
+                "name" : "pump2.status",
+                "type" : "timeseries",
+                "label" : "pump2.status",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.12665061784866438
+              }, {
+                "name" : "pump3.alarm",
+                "type" : "timeseries",
+                "label" : "pump3.alarm",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.36777685456578224
+              }, {
+                "name" : "pump3.status",
+                "type" : "timeseries",
+                "label" : "pump3.status",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.6503826194493028
+              }, {
+                "name" : "pump4.alarm",
+                "type" : "timeseries",
+                "label" : "pump4.alarm",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.08641397127692452
+              }, {
+                "name" : "pump4.status",
+                "type" : "timeseries",
+                "label" : "pump4.status",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.23403162301365854
+              }, {
+                "name" : "pump5.alarm",
+                "type" : "timeseries",
+                "label" : "pump5.alarm",
+                "color" : "#e91e63",
+                "settings" : { },
+                "_hash" : 0.268428136248793
+              }, {
+                "name" : "pump5.status",
+                "type" : "timeseries",
+                "label" : "pump5.status",
+                "color" : "#ffeb3b",
+                "settings" : { },
+                "_hash" : 0.6487979708643634
+              }, {
+                "name" : "pump6.alarm",
+                "type" : "timeseries",
+                "label" : "pump6.alarm",
+                "color" : "#03a9f4",
+                "settings" : { },
+                "_hash" : 0.6900349045290193
+              }, {
+                "name" : "pump6.status",
+                "type" : "timeseries",
+                "label" : "pump6.status",
+                "color" : "#ff9800",
+                "settings" : { },
+                "_hash" : 0.8516307830392262
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1681300299830,
+                  "endTimeMs" : 1681386699830
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<script>\r\n    var firstAlarm = document.getElementById(\"firstAlarm\");\r\n    var secondAlarm = document.getElementById(\"secondAlarm\");\r\n    var thirdAlarm = document.getElementById(\"thirdAlarm\");\r\n    var fourthAlarm = document.getElementById(\"fourthAlarm\");\r\n    var fifthAlarm = document.getElementById(\"fifthAlarm\");\r\n    var sixthAlarm = document.getElementById(\"sixthAlarm\");\r\n    \r\n    var firstStatus = document.getElementById(\"firstStatus\");\r\n    var secondStatus = document.getElementById(\"secondStatus\");\r\n    var thirdStatus = document.getElementById(\"thirdStatus\");\r\n    var fourthStatus = document.getElementById(\"fourthStatus\");\r\n    var fifthStatus = document.getElementById(\"fifthStatus\");\r\n    var sixthStatus = document.getElementById(\"sixthStatus\");\r\n    \r\n    var isThird = (new Boolean(thirdAlarm.innerText)).toString();\r\n    var isFourth = (new Boolean(fourthAlarm.innerText)).toString();\r\n    var isFifth = (new Boolean(fifthAlarm.innerText)).toString();\r\n    var isSixth = (new Boolean(sixthAlarm.innerText)).toString();\r\n\r\n\r\n    if(isThird == \"false\") {\r\n        document.getElementById(\"pump3Cont\").style.display = \"none\";\r\n    }\r\n    if(isFourth == \"false\") {\r\n        document.getElementById(\"pump4Cont\").style.display = \"none\";\r\n    }\r\n    if(isFifth == \"false\") {\r\n        document.getElementById(\"pump5Cont\").style.display = \"none\";\r\n    }\r\n    if(isSixth == \"false\") {\r\n        document.getElementById(\"pump6Cont\").style.display = \"none\";\r\n    }\r\n    function changeColor(content,value){\r\n        switch(value) {\r\n            case \"ok\":\r\n                content.style.backgroundColor = \"#DFFFD8\";\r\n                content.style.color = \"#5D9C59\";\r\n                break;\r\n            case \"failure\":\r\n                content.style.backgroundColor = \"#F7A4A4\";\r\n                content.style.color = \"#EA5455\"\r\n                break;\r\n            case \"warning\":\r\n                content.style.backgroundColor = \"#FDF7C3\";\r\n                content.style.color = \"#EBB02D\";\r\n            default:\r\n                break;\r\n        }\r\n        content.style.textShadow = \"-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white\";\r\n    }\r\n    function addImage(content,value){\r\n        let image = document.createElement(\"img\");\r\n        switch(value){\r\n            case \"idle\":\r\n                image.src = \"https://cdn4.iconfinder.com/data/icons/user-interface-737/32/Wall_Clock-512.png\";\r\n                break;\r\n            case \"working\":\r\n                image.src = \"https://icon-library.com/images/loading-icon-animated-gif/loading-icon-animated-gif-3.jpg\";\r\n                break;\r\n            case \"disconnected\":\r\n                image.src = \"https://ugokawaii.com/wp-content/uploads/2022/06/cross.gif\";\r\n                break;\r\n            default:\r\n            break;\r\n        }\r\n    content.style.textAlign = \"start\";\r\n    content.appendChild(image);\r\n    }\r\n    changeColor(firstAlarm, firstAlarm.innerText);\r\n    changeColor(secondAlarm, secondAlarm.innerText);\r\n    changeColor(thirdAlarm,thirdAlarm.innerText);\r\n    changeColor(fourthAlarm,fourthAlarm.innerText);\r\n    changeColor(fifthAlarm,fifthAlarm.innerText);\r\n    changeColor(sixthAlarm,sixthAlarm.innerText);\r\n    \r\n    addImage(firstStatus,firstStatus.innerText);\r\n    addImage(secondStatus,secondStatus.innerText);\r\n    addImage(thirdStatus,thirdStatus.innerText);\r\n    addImage(fourthStatus,fourthStatus.innerText);\r\n    addImage(fifthStatus,fifthStatus.innerText);\r\n    addImage(sixthStatus,sixthStatus.innerText);\r\n</script>\r\n<div class='card'>\r\n    <h1>Station 1</h1>\r\n    <table class=\"table\">\r\n        <thead>\r\n            <tr>\r\n                <th>Name</th>\r\n                <th>Alarm</th>\r\n                <th>Status</th>\r\n                <th>Go to data</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n            <tr id=\"pump1Cont\">\r\n                <td>MPM1</td>\r\n                <td id=\"firstAlarm\">${pump1.alarm}</td>\r\n                <td id=\"firstStatus\">${pump1.status}</td>\r\n                <td>\r\n                    <button id=\"pump1\">\r\n                        Details\r\n                    </button>\r\n                </td>\r\n            </tr>\r\n            <tr id=\"pump2Cont\">\r\n                <td>MPM2</td>\r\n                <td id=\"secondAlarm\">${pump2.alarm}</td>\r\n                <td id=\"secondStatus\">${pump2.status}</td>\r\n                <td>\r\n                    <button id=\"pump2\">\r\n                        Details\r\n                    </button>\r\n                </td>\r\n            </tr>\r\n            <tr id=\"pump3Cont\">\r\n                <td>MPM3</td>\r\n                <td id=\"thirdAlarm\">${pump3.alarm}</td>\r\n                <td id=\"thirdStatus\">${pump3.status}</td>\r\n                <td>\r\n                    <button id=\"pump3\">\r\n                        Details\r\n                    </button>\r\n                </td>\r\n            </tr>\r\n            <tr id=\"pump4Cont\">\r\n                <td>MPM4</td>\r\n                <td id=\"fourthAlarm\">${pump4.alarm}</td>\r\n                <td id=\"fourthStatus\">${pump4.status}</td>\r\n                <td>\r\n                    <button id=\"pump4\">\r\n                        Details\r\n                    </button>\r\n                </td>\r\n            </tr>\r\n            <tr id=\"pump5Cont\">\r\n                <td>MPM5</td>\r\n                <td id=\"fifthAlarm\">${pump5.alarm}</td>\r\n                <td id=\"fifthStatus\">${pump5.status}</td>\r\n                <td>\r\n                    <button id=\"pump5\">\r\n                        Details\r\n                    </button>\r\n                </td>\r\n            </tr>\r\n            <tr id=\"pump6Cont\">\r\n                <td>MPM6</td>\r\n                <td id=\"sixthAlarm\">${pump6.alarm}</td>\r\n                <td id=\"sixthStatus\">${pump6.status}</td>\r\n                <td>\r\n                    <button id=\"pump6\">\r\n                        Details\r\n                    </button>\r\n                </td>\r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n</div>",
+              "cardCss" : ".card {\r\n    width: 100%;\r\n    height: 100%;\r\n    border: 2px solid #ccc;\r\n    box-sizing: border-box;\r\n}\r\nh1{\r\n    font-size: 28px;\r\n    line-height: 28px;\r\n    margin: 5px;\r\n    padding: 0;\r\n}\r\n\r\n.table {\r\n  width: 100%;\r\n  border: 1px solid #dddddd;\r\n  border-collapse: collapse; \r\n}\r\n.table th {\r\n  font-weight: bold;\r\n  padding: 5px;\r\n  background: #efefef;\r\n  border: 1px solid #dddddd;\r\n}\r\n.table td {\r\n    font-weight: 400;\r\n    position: relative;\r\n    vertical-align: baseline;\r\n    text-align: center;\r\n  border: 1px solid #dddddd;\r\n  padding: 3px;\r\n}\r\n\r\nimg {\r\n    position: absolute;\r\n    right: 5px;\r\n    width: 20px;\r\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "pump1",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "pump1",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c34f1089-ae3c-2ddb-ef90-2e9ee2b735ee"
+              }, {
+                "name" : "pump2",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "pump2",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "4fbd8c3e-60c5-7e6e-ca08-4b677a2bea88"
+              }, {
+                "name" : "pump3",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "pump3",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "d036562f-11b6-ab17-23ad-7554e60a5c69"
+              }, {
+                "name" : "pump4",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "pump4",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "ce9ec3ae-b621-63f1-08d4-79af6fc8fc81"
+              }, {
+                "name" : "pump5",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "pump5",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "69c47ef1-1c7c-5d7b-043a-71fc51bc3fed"
+              }, {
+                "name" : "pump6",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "pump6",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "afc00324-ff3a-8d44-037c-deae30a0247c"
+              } ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "0f450b26-156e-4e0b-1364-629fa1e4d312"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "test",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "0f450b26-156e-4e0b-1364-629fa1e4d312" : {
+                  "sizeX" : 12,
+                  "sizeY" : 7,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "pump1" : {
+          "name" : "pump1",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "pump2" : {
+          "name" : "pump2",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "pump3" : {
+          "name" : "pump3",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "pump4" : {
+          "name" : "pump4",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "pump5" : {
+          "name" : "pump5",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "pump6" : {
+          "name" : "pump6",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "a5997412-c2b3-f456-5a78-d808f3b5343f" : {
+          "id" : "a5997412-c2b3-f456-5a78-d808f3b5343f",
+          "alias" : "Station1",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "39f7a500-d3ac-11ed-b747-3d2284eff4f2"
+            }
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "displayValue" : "",
+        "hideInterval" : false,
+        "hideLastInterval" : false,
+        "hideQuickInterval" : false,
+        "hideAggregation" : false,
+        "hideAggInterval" : false,
+        "hideTimezone" : false,
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "history" : {
+          "historyType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "fixedTimewindow" : {
+            "startTimeMs" : 1680444017354,
+            "endTimeMs" : 1680530417354
+          },
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "aggregation" : {
+          "type" : "AVG",
+          "limit" : 25000
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
+    },
+    "customerId" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "213a54e0-d3ac-11ed-a776-91b88e4188de"
+    },
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "name" : "user db",
+    "ownerId" : null,
+    "title" : "user db"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
