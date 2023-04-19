@@ -1,0 +1,111 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "MQTT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "15e6d430-cd6a-11ed-8f04-91b88e4188de"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "f37e9520-d900-11ed-b747-3d2284eff4f2"
+    },
+    "label" : null,
+    "name" : "device",
+    "ownerId" : null,
+    "softwareId" : null,
+    "type" : "default"
+  },
+  "credentials" : {
+    "credentialsId" : "WKj85C7fTDbILLRzJCDL",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4bb1ea80-daaa-11ed-ab36-91b88e4188de"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "f37e9520-d900-11ed-b747-3d2284eff4f2"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1681283976887,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1681283976887,
+      "longValue" : 1681283976883,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 46.4663222,
+      "jsonValue" : null,
+      "key" : "latitude",
+      "lastUpdateTs" : 1681283365649,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 30.7461169,
+      "jsonValue" : null,
+      "key" : "longitude",
+      "lastUpdateTs" : 1681283365649,
+      "longValue" : null,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Address",
+      "lastUpdateTs" : 1681283387186,
+      "longValue" : null,
+      "strValue" : "Ukraine,Odesa,Serednia 80"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "InvoiceName",
+      "lastUpdateTs" : 1681283387186,
+      "longValue" : null,
+      "strValue" : "hz"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "ManufactDate",
+      "lastUpdateTs" : 1681283387186,
+      "longValue" : null,
+      "strValue" : "2023-04-06"
+    } ]
+  }
+}
