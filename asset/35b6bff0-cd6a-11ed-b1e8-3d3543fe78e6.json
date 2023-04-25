@@ -20,7 +20,19 @@
     "ownerId" : null,
     "type" : "TbServiceQueue"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4bb1ea80-daaa-11ed-ab36-91b88e4188de"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "35b6bff0-cd6a-11ed-b1e8-3d3543fe78e6"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   }
